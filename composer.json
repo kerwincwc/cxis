@@ -16,7 +16,7 @@
     ],
     "require": {
         "twig/twig": "^3.10",
-        "cxis/cxis": "dev-main",
+        "cxis/core": "dev-main",
         "twig/intl-extra": "^3.10",
         "twig/html-extra": "^3.10",
         "adhocore/jwt": "^1.1"
