@@ -1,6 +1,0 @@
-Options +SymLinksIfOwnerMatch
-Options -MultiViews
-RewriteEngine On
-Options -Indexes
-
-deny from all
