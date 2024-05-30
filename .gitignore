@@ -1,0 +1,12 @@
+vendor/
+dev/
+cache/
+tmp/
+uploads/
+*.dev
+*.dev.*
+*.test.*
+test.*.*
+dev.*.*
+.htaccess
+index.php
