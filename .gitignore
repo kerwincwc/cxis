@@ -8,6 +8,3 @@ uploads/
 *.test.*
 test.*.*
 dev.*.*
-.htaccess
-index.php
-core/
