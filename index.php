@@ -1,3 +1,3 @@
 <?php
 
-include_once( __DIR__ . "/core/autload.php" ) ;
+include_once( __DIR__ . "/core/autoload.php" ) ;
