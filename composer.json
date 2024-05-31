@@ -4,9 +4,7 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Cxis\\": "src/",
-            "Core\\": "../../core/",
-            "App\\": "../../app/"
+            "Cxis\\": "src/"
         },
         "files": [
             "src/Functions/functions.php"
