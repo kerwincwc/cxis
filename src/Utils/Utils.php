@@ -61,7 +61,7 @@ class Utils{
     }
 
 	public static function unset_session( $prefix = null , $keys = null ){
-		$prefix = is_null( $prefix ) ? $GLOBALS['_config']['session_key'] : $prefix ;
+		$prefix = is_null( $prefix ) ? $GLOBALS['config']['session_key'] : $prefix ;
 		foreach($_SESSION as $key => $value) {
             if( $keys != null ){
                 if (strpos($key, "{$prefix}") === 0 AND in_array( $key , $keys ) ){ unset($_SESSION[$key]); }
@@ -72,7 +72,7 @@ class Utils{
 	}
 
 	public static function get_session( $prefix = null , $keys = null ){
-		$prefix = is_null( $prefix ) ? $GLOBALS['_config']['session_key'] : $prefix ;
+		$prefix = is_null( $prefix ) ? $GLOBALS['config']['session_key'] : $prefix ;
 		$session_key = [];
 		foreach($_SESSION as $key => $value) {
 			if( $keys != null ){
@@ -87,14 +87,14 @@ class Utils{
 
 	public static function validateToken($token=null,$lockdown=null){
 		$valid = false ;
-		if(!isset($_POST['_token']) or !isset($_SESSION[$GLOBALS['_config']['session_key'].'_token']) or (!is_null($lockdown) and !isset($_SESSION[$GLOBALS['_config']['session_key'].'_token2'])) ){
+		if(!isset($_POST['_token']) or !isset($_SESSION[$GLOBALS['config']['session_key'].'_token']) or (!is_null($lockdown) and !isset($_SESSION[$GLOBALS['config']['session_key'].'_token2'])) ){
 			$valid = false ;
 		}else{
 			$token = is_null( $token ) ? $_POST['_token'] : $token ;
 			if( is_null($lockdown) ){
-				if( hash_equals($_SESSION[$GLOBALS['_config']['session_key'].'_token'],$token) ){ $valid = true ; }
+				if( hash_equals($_SESSION[$GLOBALS['config']['session_key'].'_token'],$token) ){ $valid = true ; }
 			}else{
-				$calc = hash_hmac('sha256', $lockdown, $_SESSION[$GLOBALS['_config']['session_key'].'_token2']);
+				$calc = hash_hmac('sha256', $lockdown, $_SESSION[$GLOBALS['config']['session_key'].'_token2']);
 				if( hash_equals($calc, $token) ) { $valid = true ; }
 			}
 		}
@@ -206,8 +206,8 @@ class Utils{
 	}
 
 	public static function toMaskDateTime($date,$dateTime=0){
-		$dateFormat = str_replace('yyyy','Y',str_replace('mm','m',str_replace('dd','d',$GLOBALS['_config']['date_format'])));
-		$timeFormat = str_replace('HH','H',str_replace('hh','h',str_replace('MM','i',str_replace('SS','s',str_replace('tt','a',str_replace('TT','A',$GLOBALS['_config']['time_format']))))));
+		$dateFormat = str_replace('yyyy','Y',str_replace('mm','m',str_replace('dd','d',$GLOBALS['config']['date_format'])));
+		$timeFormat = str_replace('HH','H',str_replace('hh','h',str_replace('MM','i',str_replace('SS','s',str_replace('tt','a',str_replace('TT','A',$GLOBALS['config']['time_format']))))));
 		$dateTimeFormat = $dateFormat.' '.$timeFormat;
 		return $dateTime==2 ? date( $dateTimeFormat , strtotime($date) ) : ( $dateTime==1 ? date( $timeFormat , strtotime($date) ) : date( $dateFormat , strtotime($date) ) ) ;
 	}

@@ -5,7 +5,8 @@
     "autoload": {
         "psr-4": {
             "Cxis\\": "src/",
-            "Core\\": "core/"
+            "Core\\": "../../core/",
+            "App\\": "../../app/"
         },
         "files": [
             "src/Functions/functions.php"

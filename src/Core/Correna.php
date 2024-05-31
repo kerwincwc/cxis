@@ -1,6 +1,6 @@
 <?php
 
-namespace Cxis;
+namespace Cxis\Core;
 
 class Correna extends \Twig\Extension\AbstractExtension implements \Twig\Extension\GlobalsInterface
 {
@@ -24,13 +24,10 @@ class Correna extends \Twig\Extension\AbstractExtension implements \Twig\Extensi
         return [
             'sessions' => $GLOBALS['sessions'],
             'server' => $GLOBALS['http'],
-            'app' => $GLOBALS['_config'],
-            'security_groups' => $GLOBALS['security_group'],
+            'app' => $GLOBALS['config'],
+            'groups' => $GLOBALS['security_group'],
             'reference_lists' => $GLOBALS['customlist'],
-            'config' => $GLOBALS['_config'],
-            'customlist' => $GLOBALS['customlist'],
-            'customlist' => $GLOBALS['customlist'],
-            'security_group' => $GLOBALS['security_group'],
+            'config' => $GLOBALS['config'],
             'session' => $GLOBALS['sessions'],
             'http' => $GLOBALS['http'],
         ];
@@ -48,9 +45,13 @@ class Correna extends \Twig\Extension\AbstractExtension implements \Twig\Extensi
     public function getFunctions()
     {
         return [
+            new \Twig\TwigFunction('randomText', function ($length=10) {
+                $length = [ $length ];
+                return \Cxis\Utils\Utils::uuid($length);
+            }),
             new \Twig\TwigFunction('flash', function () {
-                $flashbag = isset($_SESSION[$GLOBALS['_config']['session_key'].'_flashbag'])?$_SESSION[$GLOBALS['_config']['session_key'].'_flashbag']:[];
-                unset( $_SESSION[$GLOBALS['_config']['session_key'].'_flashbag'] );
+                $flashbag = isset($_SESSION[$GLOBALS['config']['session_key'].'_flashbag'])?$_SESSION[$GLOBALS['config']['session_key'].'_flashbag']:[];
+                unset( $_SESSION[$GLOBALS['config']['session_key'].'_flashbag'] );
                 return $flashbag;
             }),
             new \Twig\TwigFunction('json_to_list', function($json){
@@ -59,10 +60,10 @@ class Correna extends \Twig\Extension\AbstractExtension implements \Twig\Extensi
                 return $result;
             }),
             new \Twig\TwigFunction('form_token',function($lock_to = null) {
-                if (empty($_SESSION[$GLOBALS['_config']['session_key'].'_token'])) { $_SESSION[$GLOBALS['_config']['session_key'].'_token'] = bin2hex(random_bytes(32)); }
-                if (empty($_SESSION[$GLOBALS['_config']['session_key'].'_token2'])) { $_SESSION[$GLOBALS['_config']['session_key'].'_token2'] = random_bytes(32); }
-                if (empty($lock_to)) { return $_SESSION[$GLOBALS['_config']['session_key'].'_token']; }
-                return hash_hmac('sha256', $lock_to, $_SESSION[$GLOBALS['_config']['session_key'].'_token2']);
+                if (empty($_SESSION[$GLOBALS['config']['session_key'].'_token'])) { $_SESSION[$GLOBALS['config']['session_key'].'_token'] = bin2hex(random_bytes(32)); }
+                if (empty($_SESSION[$GLOBALS['config']['session_key'].'_token2'])) { $_SESSION[$GLOBALS['config']['session_key'].'_token2'] = random_bytes(32); }
+                if (empty($lock_to)) { return $_SESSION[$GLOBALS['config']['session_key'].'_token']; }
+                return hash_hmac('sha256', $lock_to, $_SESSION[$GLOBALS['config']['session_key'].'_token2']);
             }),
             new \Twig\TwigFunction('isAssigned',function($required='any',$userrole=null) {
                 $userroles=!is_null($userrole)?$userrole:(!isset($GLOBALS['sessions']['userroles'])?'guest':strtolower($GLOBALS['sessions']['userroles']));
@@ -70,12 +71,14 @@ class Correna extends \Twig\Extension\AbstractExtension implements \Twig\Extensi
                 $reqroles=strpos('_'.$required, 'role_')>0?$GLOBALS['security_group'][$required]:strtolower($required);
                 $reqkeys=explode(",", 'master,sm_master,'.$reqroles);
                 $ok=0; $bad=0;
-                if(in_array('any',$reqkeys) OR (in_array('master',$userkeys) OR in_array('sm_master', $userkeys))){
-                    $ok==$ok+1;
+                if(in_array('any',$reqkeys)){
+                    $ok++;
+                }elseif(in_array('master',$userkeys) OR in_array('sm_master', $userkeys)){
+                    $ok++;
                 }else{
                     foreach($userkeys as $role){
                         if(in_array($role,$reqkeys)){ $ok=$ok+1; }
-                        else{ $bad=$bad+1; }
+                        else{ $bad++; }
                     }
                 }
                 return $ok>0?true:false;
@@ -100,7 +103,7 @@ class Correna extends \Twig\Extension\AbstractExtension implements \Twig\Extensi
                 return utils::toMaskDateTime($date,$dateTime) ;
             }),
             new \Twig\TwigFunction('QRCode',function($text,$type,$size=6) {
-                return $GLOBALS['_config']['root']."/document/qrcode.html?i={$text}&t={$type}".($size==6?'':"&s=$size") ;
+                return $GLOBALS['config']['root']."/document/qrcode.html?i={$text}&t={$type}".($size==6?'':"&s=$size") ;
             })
         ];
     }

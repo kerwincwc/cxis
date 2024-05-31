@@ -20,6 +20,7 @@ function minify_css($css) {
   
 /* RENDER TEMPLATE */
 function render_template($template,$params=[]){
+    $template = "$template.twig.html";
     if($GLOBALS['ENV']['template']['env']=='prod'){
       try{ print_r( tidyHTML( $GLOBALS['twig']->render( $template, $params ) ) ) ; }
       catch(\Exception $e){ print_r( \Cxis\Utils\Errors::error( 404 , 1 ) ) ; }
@@ -30,6 +31,6 @@ function render_template($template,$params=[]){
   
 /* PAGE REDIRECTION */
 function redirect($url,$ext=false){
-    if(!$ext){ return \Cxis\Utils\Utils::redirectTo($GLOBALS['_config']['root'] . '/' . $url) ; }
+    if(!$ext){ return \Cxis\Utils\Utils::redirectTo($GLOBALS['config']['root'] . '/' . $url) ; }
     else{ return \Cxis\Utils\Utils::redirectTo($url) ; }
 }

@@ -80,7 +80,7 @@ class Router
    * @param boolean         $lr      Specify if login is required
    */
   public function login_required( $lr = false ){
-      if( $lr AND ( isset( $_SESSION[ $GLOBALS['_config']['login_session'] ] ) AND $_SESSION[ $GLOBALS['_config']['login_session'] ] ) ) :
+      if( $lr AND ( isset( $_SESSION[ $GLOBALS['config']['login_session'] ] ) AND $_SESSION[ $GLOBALS['config']['login_session'] ] ) ) :
         return true ;
       else:
         return false ;
@@ -94,7 +94,7 @@ class Router
    * @param string          $ur      Current user security roles
    */
   public function check_roles( $sr, $ur = null ){
-      $usr = $GLOBALS['_config']['session_key'] . '_userroles' ;
+      $usr = $GLOBALS['config']['session_key'] . '_userroles' ;
       $ur = (is_null( $ur ) OR $ur == '' ) ? ( isset( $_SESSION[$usr] ) ? $_SESSION[$usr] : 'GUEST' ) : $ur ;
       $srt = (isset($sr) AND ($sr!='' OR !is_null($sr))) ? $sr : 'ANY';
       $srs = strtolower( $srt );
@@ -133,7 +133,7 @@ class Router
         try {
             $ipAddress = isset( $_SERVER['HTTP_CF_CONNECTING_IP'] ) ? $_SERVER['HTTP_CF_CONNECTING_IP'] : $_SERVER['REMOTE_ADDR'] ;
             $ipCountry = isset( $_SERVER['HTTP_CF_IPCOUNTRY'] ) ? $_SERVER['HTTP_CF_IPCOUNTRY'] : null ;
-            $user = isset($_SESSION[$GLOBALS['_config']['session_key'].'_username'])?$_SESSION[$GLOBALS['_config']['session_key'].'_username']:'external';
+            $user = isset($_SESSION[$GLOBALS['config']['session_key'].'_username'])?$_SESSION[$GLOBALS['config']['session_key'].'_username']:'external';
             $route_2=json_encode(explode("/",$route));
             $info=json_encode([
                 "METHOD"=>isset($_SERVER['REQUEST_METHOD'])?$_SERVER['REQUEST_METHOD']:null,
@@ -488,8 +488,8 @@ class Router
 
   public function triggerlogin($match = null){
     $this->log4j('redirected');
-    $loginURL = $GLOBALS['_config']['login_page'];
-    header('location:' . $GLOBALS['_config']['root'] . "/{$loginURL}?next=" . $match);
+    $loginURL = $GLOBALS['config']['login_page'];
+    header('location:' . $GLOBALS['config']['root'] . "/{$loginURL}?next=" . $match);
   }
 
   /**

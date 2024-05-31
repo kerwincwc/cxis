@@ -35,7 +35,7 @@ class Errors{
         if( $bool ) :
           header( 'content-type:text/html' );
           ob_start();
-          echo tidyHTML( $GLOBALS['twig']->render( '@macros/errors.html', ['config'=>$GLOBALS['_config'],'error'=>$errorMsg] ) );
+          echo tidyHTML( $GLOBALS['twig']->render( '@macros/errors.html', ['config'=>$GLOBALS['config'],'error'=>$errorMsg] ) );
           $output = ob_get_contents();
           ob_clean();
         else:

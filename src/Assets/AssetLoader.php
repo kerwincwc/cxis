@@ -22,14 +22,12 @@ class AssetLoader{
           'svg'=>'image/svg+xml',
         ];
         
-        if( file_exists( $GLOBALS['_config']['webappdir'] . '/static/' . $filename ) ){
-          $filecontents = file_get_contents( $GLOBALS['_config']['webappdir'] . '/static/' . $filename , true ) ;
+        if( file_exists( __BASEDIR__."/".$GLOBALS['config']['webappdir']."/static/$filename" ) ){
+          $filecontents = file_get_contents( __BASEDIR__."/".$GLOBALS['config']['webappdir']."/static/$filename" , true ) ;
           $fileexists = true;
-          $output = dirname( __DIR__ , 1 ) . '/webapp/static' . $filename ;
-        }elseif( file_exists( dirname( __DIR__ , 1 ) . '/webapp/static/' . $filename ) ){
-          $filecontents = file_get_contents( dirname( __DIR__ , 1 ) . '/webapp/static/' . $filename , true ) ;
+        }elseif( file_exists( __DIR__ . "/webapp/static/$filename" ) ){
+          $filecontents = file_get_contents( __DIR__."/webapp/static/$filename" , true ) ;
           $fileexists = true;
-          $output = dirname( __DIR__ , 1 ) . '/webapp/static' . $filename ;
         }else{
           $fileexists = false;
         };
