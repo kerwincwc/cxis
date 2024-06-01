@@ -4,13 +4,13 @@ namespace Cxis\Utils;
 
 class Errors{
 
-    protected $logEvents = false;
     protected $dbTable;
 
     public static function errorList(){
         $errorList = [
           "400" => 'The requested resource was not found on this server.',
           '401' => 'You are not authorized to view this content.',
+          '404' => 'The requested resource was not found on this server.',
           '415' => 'The requested resource is of an unsupported file type.',
           '405' => 'The requested method is not allowed.',
           '425' => 'This resource is not yet available at this time.',
@@ -35,7 +35,7 @@ class Errors{
         if( $bool ) :
           header( 'content-type:text/html' );
           ob_start();
-          echo tidyHTML( $GLOBALS['twig']->render( '@macros/errors.html', ['config'=>$GLOBALS['config'],'error'=>$errorMsg] ) );
+          echo tidyHTML( $GLOBALS['twig']->render( '@macros/errors.twig', ['config'=>$GLOBALS['config'],'error'=>$errorMsg] ) );
           $output = ob_get_contents();
           ob_clean();
         else:
@@ -46,10 +46,10 @@ class Errors{
     }
 
     public static function errLog($error,$uuid){
-        if( self::$logEvents === true ){
+        if( $GLOBALS['ENV']['log']['error_log'] === true ){
             $payload = ['uuid'=>$uuid,'`table`'=>'error','action'=>'log','old_value'=>json_encode($error)];
             $db = new \Cxis\ORM\DB();
-            $db->table( self::dbTable )->begin();
+            $db->table( $GLOBALS['ENV']['log']['error_log_tbl'] )->begin();
             $db->insert( $payload );
             $db->commit();
             return true;

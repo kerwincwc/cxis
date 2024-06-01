@@ -98,7 +98,7 @@ class Router
       $ur = (is_null( $ur ) OR $ur == '' ) ? ( isset( $_SESSION[$usr] ) ? $_SESSION[$usr] : 'GUEST' ) : $ur ;
       $srt = (isset($sr) AND ($sr!='' OR !is_null($sr))) ? $sr : 'ANY';
       $srs = strtolower( $srt );
-      $srk = (substr($srs,0,5)=='role_' and isset($GLOBALS['security_group'][$srs]))?$GLOBALS['security_group'][$srs]:$srt;
+      $srk = (substr($srs,0,5)=='role_' and isset($GLOBALS['security_group']['roles'][$srs]['value']))?$GLOBALS['security_group']['roles'][$srs]['value']:$srt;
       $srr = explode(",",strtoupper("MASTER,SM_MASTER,{$srk}"));
       $_ok = 0;$_bad = 0;
       $urc = explode(",",strtoupper($ur));
@@ -177,16 +177,16 @@ class Router
    */
   public function match($methods, $pattern, $fn, $lr=false, $sc='ANY')
   {
-      $pattern = $this->baseRoute . '/' . trim($pattern, '/');
-      $pattern = $this->baseRoute ? rtrim($pattern, '/') : $pattern;
-      foreach (explode('|', $methods) as $method) {
-          $this->afterRoutes[$method][] = array(
-              'pattern' => $pattern,
-              'fn' => $fn,
-              'lr' => $lr,
-              'sc' => $sc,
-          );
-      }
+        $pattern = $this->baseRoute . '/' . trim($pattern, '/');
+        $pattern = $this->baseRoute ? rtrim($pattern, '/') : $pattern;
+        foreach (explode('|', $methods) as $method) {
+            $this->afterRoutes[$method][] = array(
+                'pattern' => $pattern,
+                'fn' => $fn,
+                'lr' => $lr,
+                'sc' => $sc,
+            );
+        }
   }
 
   /**
@@ -505,11 +505,18 @@ class Router
   */
   private function patternMatches($pattern, $uri, &$matches, $flags)
   {
-    // Replace all curly braces matches {} into word patterns (like Laravel)
-    $pattern = preg_replace('/\/{(.*?)}/', '/(.*?)', $pattern);
+    $root = explode("/",$GLOBALS['config']['root']);
+    if(isset($root[2])){ $root = str_replace( "$root[0]/$root[1]", "", $GLOBALS['config']['root'] ); }
+    else{ $root = ""; }
+    $pattern = $root.$pattern;
+    $pattern = $root=="" ? $pattern : ( substr($pattern, strlen($pattern) - 1 , 1 ) == '/' ? substr($pattern, 0, strlen($pattern) - 1 ) : $pattern ) ;
 
+    // Replace all curly braces matches {} into word patterns (like Laravel)    
+    $pattern = preg_replace('/\/{(.*?)}/', '/(.*?)', $pattern);
+    $return = boolval(preg_match_all('#^' . $pattern . '$#', $uri, $matches, PREG_OFFSET_CAPTURE));
+    // print_r( $pattern . '~' . $uri . '~' . json_encode( $return ) . '<br>');
     // we may have a match!
-    return boolval(preg_match_all('#^' . $pattern . '$#', $uri, $matches, PREG_OFFSET_CAPTURE));
+    return $return ;
   }
 
   /**
@@ -526,13 +533,14 @@ class Router
       $numHandled = 0;
 
       // The current page URL
-      $uri = $this->getCurrentUri();
+      $uri = $this->getCurrentUri(); 
 
       // Loop all routes
       foreach ($routes as $route) {
 
           // get routing matches
           $is_match = $this->patternMatches($route['pattern'], $uri, $matches, PREG_OFFSET_CAPTURE);
+          
 
           // is there a valid match?
           if ($is_match) {

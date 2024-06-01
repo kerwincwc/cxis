@@ -1,1 +1,102 @@
-2024-05-27 20:14:05: empty string!!!2024-05-27 20:14:23: empty string!!!2024-05-27 20:14:46: empty string!!!2024-05-27 20:14:56: empty string!!!2024-05-27 20:15:09: empty string!!!
+2024-05-27 20:14:05: empty string!!!2024-05-27 20:14:23: empty string!!!2024-05-27 20:14:46: empty string!!!2024-05-27 20:14:56: empty string!!!2024-05-27 20:15:09: empty string!!!2024-06-01 03:40:10: <br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\frame_1.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrspec.php</b> on line <b>568</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_0\mask_21_0.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_1\mask_21_1.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_2\mask_21_2.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_3\mask_21_3.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_4\mask_21_4.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_5\mask_21_5.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_6\mask_21_6.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_7\mask_21_7.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />
+2024-06-01 06:21:21: <br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\frame_2.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrspec.php</b> on line <b>568</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_0\mask_25_0.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_1\mask_25_1.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_2\mask_25_2.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_3\mask_25_3.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_4\mask_25_4.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_5\mask_25_5.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_6\mask_25_6.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_7\mask_25_7.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />
+2024-06-01 06:21:57: <br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\frame_2.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrspec.php</b> on line <b>568</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_0\mask_25_0.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_1\mask_25_1.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_2\mask_25_2.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_3\mask_25_3.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_4\mask_25_4.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_5\mask_25_5.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_6\mask_25_6.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>154</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\cache\mask_7\mask_25_7.dat): failed to open stream: No such file or directory in <b>D:\Work\WS\webwfm\cxis\vendor\cxis\core\src\QRCode\qrmask.php</b> on line <b>155</b><br />

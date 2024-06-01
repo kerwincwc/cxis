@@ -17,7 +17,7 @@ class Utils{
     public static function isAssigned($required='any',$userrole=null){
         $userroles=!is_null($userrole)?$userrole:(!isset($GLOBALS['sessions']['userroles'])?'guest':strtolower($GLOBALS['sessions']['userroles']));
         $userkeys=explode(",", $userroles);
-        $reqroles=strpos('_'.$required, 'role_')>0?$GLOBALS['security_group'][$required]:strtolower($required);
+        $reqroles=strpos('_'.$required, 'role_')>0?$GLOBALS['security_group']['roles'][$required]['value']:strtolower($required);
         $reqkeys=explode(",", 'master,sm_master,'.$reqroles);
         $ok=0; $bad=0;
         if(in_array('any',$reqkeys) OR (in_array('master',$userkeys) OR in_array('sm_master', $userkeys))){
