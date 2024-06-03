@@ -212,4 +212,17 @@ class Utils{
 		return $dateTime==2 ? date( $dateTimeFormat , strtotime($date) ) : ( $dateTime==1 ? date( $timeFormat , strtotime($date) ) : date( $dateFormat , strtotime($date) ) ) ;
 	}
 
+	public static function cypher( string $text, string $crypt = 'encrypt' ){
+		$secret_key = $GLOBALS['ENV']['jwt']['secret'] ;
+		$method = "aes128" ;
+		$iv_length = openssl_cipher_iv_length($method);
+		$iv = 'a53sdssd15532456';
+		// return $iv;
+		if( $crypt == 'encrypt' ){
+			return openssl_encrypt($text, $method, $secret_key, 0, $iv);
+		}elseif( $crypt == 'decrypt' ){
+			return openssl_decrypt($text, $method, $secret_key, 0, $iv);
+		}
+	}
+
 }

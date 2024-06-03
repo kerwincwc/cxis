@@ -37,7 +37,9 @@ class Correna extends \Twig\Extension\AbstractExtension implements \Twig\Extensi
     public function getFilters()
     {
         return [
-            new \Twig\TwigFilter('toFilesize', function ($size) { return utils::fileSize($size); }),
+            new \Twig\TwigFilter('toFilesize', function ($size) { return \Cxis\Utils\Utils::fileSize($size); }),
+            new \Twig\TwigFilter('b64_encode', function ($text) { return base64_encode($text); }),
+            new \Twig\TwigFilter('b64_decode', function ($text) { return base64_decode($text); }),
         ];
     }
 
@@ -104,7 +106,18 @@ class Correna extends \Twig\Extension\AbstractExtension implements \Twig\Extensi
             }),
             new \Twig\TwigFunction('QRCode',function($text,$type,$size=6) {
                 return $GLOBALS['config']['root']."/document/qrcode.html?i={$text}&t={$type}".($size==6?'':"&s=$size") ;
-            })
+            }),
+            new \Twig\TwigFunction('assetBundle',function($assets,$type='js') {
+                $bundle = base64_encode($assets);
+                if($type=='js'){ return "<script type='text/javascript' src='{$GLOBALS['config']['static']}/asset/{$bundle}.bundle.js'></script>"; }
+                elseif($type=='defer'){ return "<script defer='defer' type='text/javascript' src='{$GLOBALS['config']['static']}/asset/{$bundle}.bundle.js'></script>"; }
+                elseif($type=='css'){ return "<link rel='stylesheet' type='text/css' href='{$GLOBALS['config']['static']}/asset/{$bundle}.bundle.css'>"; }
+            }),
+            new \Twig\TwigFunction('loadmodules',function(){
+                $path = file_exists("{$GLOBALS['cxis_app_dir']}/config/modules.json")? "{$GLOBALS['cxis_app_dir']}/config/modules.json" : __BASEDIR__."/core/config/modules.sample.json" ;
+                $json = file_get_contents($path);
+                return json_decode($json,true)['modules'];
+            }),
         ];
     }
 
